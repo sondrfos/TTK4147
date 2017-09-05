@@ -7,14 +7,14 @@
 sem_t sema;
 
 void do_stuff(char a){
-	sem_wait(&sema);
+    while(1){
+    	sem_wait(&sema);
 
-	printf("Thread number: %i doing the first thing\n", a);
-	sleep(1);
-	printf("Thread number: %i doing the second thing\n", a);
-	sleep(1);
+    	printf("Thread number: %i doing the thing\n", a);
+    	sleep(1);
 
-	sem_post(&sema);
+    	sem_post(&sema);
+    }
 }
 	
 
