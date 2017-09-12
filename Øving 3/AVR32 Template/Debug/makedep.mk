@@ -14,11 +14,11 @@ src\asf\avr32\drivers\intc\exception.S
 
 src\asf\avr32\drivers\intc\intc.c
 
-src\asf\avr32\drivers\pm\pm.c
+src\asf\avr32\drivers\usbb\pm\pm.c
 
-src\asf\avr32\drivers\pm\pm_conf_clocks.c
+src\asf\avr32\drivers\usbb\pm\pm_conf_clocks.c
 
-src\asf\avr32\drivers\pm\power_clocks_lib.c
+src\asf\avr32\drivers\usbb\pm\power_clocks_lib.c
 
 src\asf\avr32\drivers\usbb\usbb_device.c
 

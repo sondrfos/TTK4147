@@ -44,8 +44,8 @@ SUBDIRS :=  \
 ../src/asf/avr32/drivers/flashc/ \
 ../src/asf/avr32/drivers/gpio/ \
 ../src/asf/avr32/drivers/intc/ \
-../src/asf/avr32/drivers/pm/ \
 ../src/asf/avr32/drivers/usbb/ \
+../src/asf/avr32/drivers/usbb/pm/ \
 ../src/asf/avr32/services/ \
 ../src/asf/avr32/services/delay/ \
 ../src/asf/avr32/utils/ \
@@ -81,9 +81,9 @@ C_SRCS +=  \
 ../src/asf/avr32/drivers/flashc/flashc.c \
 ../src/asf/avr32/drivers/gpio/gpio.c \
 ../src/asf/avr32/drivers/intc/intc.c \
-../src/asf/avr32/drivers/pm/pm.c \
-../src/asf/avr32/drivers/pm/pm_conf_clocks.c \
-../src/asf/avr32/drivers/pm/power_clocks_lib.c \
+../src/asf/avr32/drivers/usbb/pm/pm.c \
+../src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.c \
+../src/asf/avr32/drivers/usbb/pm/power_clocks_lib.c \
 ../src/asf/avr32/drivers/usbb/usbb_device.c \
 ../src/asf/avr32/services/delay/delay.c \
 ../src/asf/common/services/clock/uc3a3_a4/sysclk.c \
@@ -114,9 +114,9 @@ src/asf/avr32/drivers/flashc/flashc.o \
 src/asf/avr32/drivers/gpio/gpio.o \
 src/asf/avr32/drivers/intc/exception.o \
 src/asf/avr32/drivers/intc/intc.o \
-src/asf/avr32/drivers/pm/pm.o \
-src/asf/avr32/drivers/pm/pm_conf_clocks.o \
-src/asf/avr32/drivers/pm/power_clocks_lib.o \
+src/asf/avr32/drivers/usbb/pm/pm.o \
+src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.o \
+src/asf/avr32/drivers/usbb/pm/power_clocks_lib.o \
 src/asf/avr32/drivers/usbb/usbb_device.o \
 src/asf/avr32/services/delay/delay.o \
 src/asf/avr32/utils/startup/startup_uc3.o \
@@ -139,9 +139,9 @@ src/asf/avr32/drivers/flashc/flashc.o \
 src/asf/avr32/drivers/gpio/gpio.o \
 src/asf/avr32/drivers/intc/exception.o \
 src/asf/avr32/drivers/intc/intc.o \
-src/asf/avr32/drivers/pm/pm.o \
-src/asf/avr32/drivers/pm/pm_conf_clocks.o \
-src/asf/avr32/drivers/pm/power_clocks_lib.o \
+src/asf/avr32/drivers/usbb/pm/pm.o \
+src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.o \
+src/asf/avr32/drivers/usbb/pm/power_clocks_lib.o \
 src/asf/avr32/drivers/usbb/usbb_device.o \
 src/asf/avr32/services/delay/delay.o \
 src/asf/avr32/utils/startup/startup_uc3.o \
@@ -164,9 +164,9 @@ src/asf/avr32/drivers/flashc/flashc.d \
 src/asf/avr32/drivers/gpio/gpio.d \
 src/asf/avr32/drivers/intc/exception.d \
 src/asf/avr32/drivers/intc/intc.d \
-src/asf/avr32/drivers/pm/pm.d \
-src/asf/avr32/drivers/pm/pm_conf_clocks.d \
-src/asf/avr32/drivers/pm/power_clocks_lib.d \
+src/asf/avr32/drivers/usbb/pm/pm.d \
+src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.d \
+src/asf/avr32/drivers/usbb/pm/power_clocks_lib.d \
 src/asf/avr32/drivers/usbb/usbb_device.d \
 src/asf/avr32/services/delay/delay.d \
 src/asf/avr32/utils/startup/startup_uc3.d \
@@ -189,9 +189,9 @@ src/asf/avr32/drivers/flashc/flashc.d \
 src/asf/avr32/drivers/gpio/gpio.d \
 src/asf/avr32/drivers/intc/exception.d \
 src/asf/avr32/drivers/intc/intc.d \
-src/asf/avr32/drivers/pm/pm.d \
-src/asf/avr32/drivers/pm/pm_conf_clocks.d \
-src/asf/avr32/drivers/pm/power_clocks_lib.d \
+src/asf/avr32/drivers/usbb/pm/pm.d \
+src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.d \
+src/asf/avr32/drivers/usbb/pm/power_clocks_lib.d \
 src/asf/avr32/drivers/usbb/usbb_device.d \
 src/asf/avr32/services/delay/delay.d \
 src/asf/avr32/utils/startup/startup_uc3.d \
@@ -257,21 +257,21 @@ src/asf/avr32/drivers/intc/intc.o: ../src/asf/avr32/drivers/intc/intc.c
 	@echo Finished building: $<
 	
 
-src/asf/avr32/drivers/pm/pm.o: ../src/asf/avr32/drivers/pm/pm.c
+src/asf/avr32/drivers/usbb/pm/pm.o: ../src/asf/avr32/drivers/usbb/pm/pm.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR32 GCC\Native\3.4.1067\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=UC3_A3_XPLAINED  -I"../src" -I"../src/asf/avr32/boards" -I"../src/asf/avr32/boards/uc3_a3_xplained" -I"../src/asf/avr32/drivers/flashc" -I"../src/asf/avr32/drivers/gpio" -I"../src/asf/avr32/drivers/intc" -I"../src/asf/avr32/drivers/pm" -I"../src/asf/avr32/drivers/usbb" -I"../src/asf/avr32/utils" -I"../src/asf/avr32/utils/preprocessor" -I"../src/asf/common/boards" -I"../src/asf/common/services/clock" -I"../src/asf/common/services/sleepmgr" -I"../src/asf/common/services/usb" -I"../src/asf/common/services/usb/class/cdc" -I"../src/asf/common/services/usb/class/cdc/device" -I"../src/asf/common/services/usb/udc" -I"../src/asf/common/utils" -I"../src/asf/common/utils/stdio/stdio_usb" -I"../src/asf/common/utils/stdio/stdio_usb/stdio_usb_example/at32uc3a3256_uc3_a3_xplained" -I"../src/config" -I"../src/asf/avr32/drivers/cpu/cycle_counter" -I"../src/asf/avr32/services/delay"  -O1 -fdata-sections -ffunction-sections -g3 -Wall -mpart=uc3a3256 -c -std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-src/asf/avr32/drivers/pm/pm_conf_clocks.o: ../src/asf/avr32/drivers/pm/pm_conf_clocks.c
+src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.o: ../src/asf/avr32/drivers/usbb/pm/pm_conf_clocks.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR32 GCC\Native\3.4.1067\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=UC3_A3_XPLAINED  -I"../src" -I"../src/asf/avr32/boards" -I"../src/asf/avr32/boards/uc3_a3_xplained" -I"../src/asf/avr32/drivers/flashc" -I"../src/asf/avr32/drivers/gpio" -I"../src/asf/avr32/drivers/intc" -I"../src/asf/avr32/drivers/pm" -I"../src/asf/avr32/drivers/usbb" -I"../src/asf/avr32/utils" -I"../src/asf/avr32/utils/preprocessor" -I"../src/asf/common/boards" -I"../src/asf/common/services/clock" -I"../src/asf/common/services/sleepmgr" -I"../src/asf/common/services/usb" -I"../src/asf/common/services/usb/class/cdc" -I"../src/asf/common/services/usb/class/cdc/device" -I"../src/asf/common/services/usb/udc" -I"../src/asf/common/utils" -I"../src/asf/common/utils/stdio/stdio_usb" -I"../src/asf/common/utils/stdio/stdio_usb/stdio_usb_example/at32uc3a3256_uc3_a3_xplained" -I"../src/config" -I"../src/asf/avr32/drivers/cpu/cycle_counter" -I"../src/asf/avr32/services/delay"  -O1 -fdata-sections -ffunction-sections -g3 -Wall -mpart=uc3a3256 -c -std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-src/asf/avr32/drivers/pm/power_clocks_lib.o: ../src/asf/avr32/drivers/pm/power_clocks_lib.c
+src/asf/avr32/drivers/usbb/pm/power_clocks_lib.o: ../src/asf/avr32/drivers/usbb/pm/power_clocks_lib.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR32 GCC\Native\3.4.1067\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=UC3_A3_XPLAINED  -I"../src" -I"../src/asf/avr32/boards" -I"../src/asf/avr32/boards/uc3_a3_xplained" -I"../src/asf/avr32/drivers/flashc" -I"../src/asf/avr32/drivers/gpio" -I"../src/asf/avr32/drivers/intc" -I"../src/asf/avr32/drivers/pm" -I"../src/asf/avr32/drivers/usbb" -I"../src/asf/avr32/utils" -I"../src/asf/avr32/utils/preprocessor" -I"../src/asf/common/boards" -I"../src/asf/common/services/clock" -I"../src/asf/common/services/sleepmgr" -I"../src/asf/common/services/usb" -I"../src/asf/common/services/usb/class/cdc" -I"../src/asf/common/services/usb/class/cdc/device" -I"../src/asf/common/services/usb/udc" -I"../src/asf/common/utils" -I"../src/asf/common/utils/stdio/stdio_usb" -I"../src/asf/common/utils/stdio/stdio_usb/stdio_usb_example/at32uc3a3256_uc3_a3_xplained" -I"../src/config" -I"../src/asf/avr32/drivers/cpu/cycle_counter" -I"../src/asf/avr32/services/delay"  -O1 -fdata-sections -ffunction-sections -g3 -Wall -mpart=uc3a3256 -c -std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -391,7 +391,7 @@ src/asf/avr32/drivers/intc/%.o: ../src/asf/avr32/drivers/intc/%.c
 	@echo Finished building: $<
 	
 
-src/asf/avr32/drivers/pm/%.o: ../src/asf/avr32/drivers/pm/%.c
+src/asf/avr32/drivers/usbb/pm/%.o: ../src/asf/avr32/drivers/usbb/pm/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR32 GCC\Native\3.4.1067\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=UC3_A3_XPLAINED  -I"../src" -I"../src/asf/avr32/boards" -I"../src/asf/avr32/boards/uc3_a3_xplained" -I"../src/asf/avr32/drivers/flashc" -I"../src/asf/avr32/drivers/gpio" -I"../src/asf/avr32/drivers/intc" -I"../src/asf/avr32/drivers/pm" -I"../src/asf/avr32/drivers/usbb" -I"../src/asf/avr32/utils" -I"../src/asf/avr32/utils/preprocessor" -I"../src/asf/common/boards" -I"../src/asf/common/services/clock" -I"../src/asf/common/services/sleepmgr" -I"../src/asf/common/services/usb" -I"../src/asf/common/services/usb/class/cdc" -I"../src/asf/common/services/usb/class/cdc/device" -I"../src/asf/common/services/usb/udc" -I"../src/asf/common/utils" -I"../src/asf/common/utils/stdio/stdio_usb" -I"../src/asf/common/utils/stdio/stdio_usb/stdio_usb_example/at32uc3a3256_uc3_a3_xplained" -I"../src/config" -I"../src/asf/avr32/drivers/cpu/cycle_counter" -I"../src/asf/avr32/services/delay"  -O1 -fdata-sections -ffunction-sections -g3 -Wall -mpart=uc3a3256 -c -std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

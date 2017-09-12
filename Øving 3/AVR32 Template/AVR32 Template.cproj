@@ -410,22 +410,22 @@
     <Compile Include="src\asf\avr32\drivers\intc\intc.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\asf\avr32\drivers\pm\pm.c">
+    <Compile Include="src\asf\avr32\drivers\usbb\pm\pm.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\asf\avr32\drivers\pm\pm.h">
+    <Compile Include="src\asf\avr32\drivers\usbb\pm\pm.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\asf\avr32\drivers\pm\pm_conf_clocks.c">
+    <Compile Include="src\asf\avr32\drivers\usbb\pm\pm_conf_clocks.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\asf\avr32\drivers\pm\power_clocks_lib.c">
+    <Compile Include="src\asf\avr32\drivers\usbb\pm\power_clocks_lib.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\asf\avr32\drivers\pm\power_clocks_lib.h">
+    <Compile Include="src\asf\avr32\drivers\usbb\pm\power_clocks_lib.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\asf\avr32\drivers\pm\sleep.h">
+    <Compile Include="src\asf\avr32\drivers\usbb\pm\sleep.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\asf\avr32\drivers\usbb\usbb_device.c">
@@ -603,8 +603,8 @@
     <Folder Include="src\asf\avr32\drivers\flashc\" />
     <Folder Include="src\asf\avr32\drivers\gpio\" />
     <Folder Include="src\asf\avr32\drivers\intc\" />
-    <Folder Include="src\asf\avr32\drivers\pm\" />
     <Folder Include="src\asf\avr32\drivers\usbb\" />
+    <Folder Include="src\asf\avr32\drivers\usbb\pm\" />
     <Folder Include="src\asf\avr32\services\" />
     <Folder Include="src\asf\avr32\services\delay\" />
     <Folder Include="src\asf\avr32\utils\" />
