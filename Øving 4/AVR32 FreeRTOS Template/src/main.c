@@ -189,7 +189,7 @@ int main()
 	xTaskCreate( vtaskA, (signed char * ) "BASIC", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
 	xTaskCreate( vtaskB, (signed char * ) "BASIC", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
 	xTaskCreate( vtaskC, (signed char * ) "BASIC", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
-	//xTaskCreate( vCpuWork, (signed char * ) "BASIC", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
+	xTaskCreate( vCpuWork, (signed char * ) "BASIC", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
 	// Start the scheduler, anything after this will not run.
 	vTaskStartScheduler();
 }
