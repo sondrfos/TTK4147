@@ -7,6 +7,17 @@
 #include <time.h>
 #include <unistd.h>
 
+void timespec_add_us(struct timespec *t, long us)
+{
+	// add microseconds to timespecs nanosecond counter
+	t->tv_nsec += us*1000;
+
+	// if wrapping nanosecond counter, increment second counter
+	if (t->tv_nsec > 1000000000) {
+	t->tv_nsec = t->tv_nsec-1000000000;
+	t->tv_sec += 1;
+	}
+}
 
 int set_cpu(int cpu_number){
 	// setting cpu set to the selected cpu
@@ -20,11 +31,15 @@ int set_cpu(int cpu_number){
 
 void* task(void* param){
 	set_cpu(1);
-
+	struct timespec next;
 	int i = *(int*)param;
 	printf("task %d \n", i);
 	while(1){
-		while(io_read(i));
+		while(io_read(i)){
+			clock_gettime(CLOCK_REALTIME, &next);
+			timespec_add_us(&next, 100);
+			clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+		}
 		
 		io_write(i,1);
 		usleep(10);
@@ -32,6 +47,8 @@ void* task(void* param){
 	}
 
 }
+
+
 
 void* disturbance(){
 	set_cpu(1);
@@ -45,11 +62,13 @@ void* disturbance(){
 int main(){
 	io_init();
 	int i;
-	pthread_t tasks[3]
+	int integers [3] = {1, 2, 3};
+	pthread_t tasks[3];
     pthread_t disturbances[10];
    
-    for(i= 1; i<4; i++){
-    	pthread_create(&tasks[i-1], NULL, task, &i);
+    for(i= 0; i<3; i++){
+    	printf("%d", i);
+    	pthread_create(&tasks[i], NULL, task, &integers[i]);
     }
     for(i= 0; i<10; i++){
     	pthread_create(&disturbances[i], NULL, disturbance, NULL);
@@ -63,3 +82,18 @@ int main(){
 
 }
 
+
+
+/*pthread_t task;
+	pthread_create(&task, NULL, task2, NULL);
+	pthread_join(task, NULL);
+
+void* task2(){
+	struct timespec next;
+	while(1){
+		printf("500ms \n");
+		clock_gettime(CLOCK_REALTIME, &next);
+		timespec_add_us(&next, 500000);
+		clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &next, NULL);
+	}
+}*/
