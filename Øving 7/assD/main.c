@@ -30,13 +30,13 @@ int rt_task_sleep_ms(unsigned long delay){
 
 void L(){
 	rt_sem_p(&synchr, TM_INFINITE);
-	rt_task_set_priority(&tasks[0],2);
+	rt_task_set_priority(&tasks[0],3);
 	rt_mutex_acquire(&A, TM_INFINITE);
 
 	busy_wait_ms(3*TU);
 	rt_printf("gotta L \n");
 
-	rt_task_set_priority(&tasks[0],2);
+	rt_task_set_priority(&tasks[0],3);
 	rt_mutex_acquire(&B, TM_INFINITE);
 	rt_printf("gatti L \n");
 
