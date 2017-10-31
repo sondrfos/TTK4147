@@ -6,7 +6,7 @@ signal_response_bw=500
 
 #Global
 set term png enhanced size 1280,1024
-set output "plot4p=0.001.png"
+set output "plot4.png"
 unset key
 set multiplot
 set size 0.5, 0.5

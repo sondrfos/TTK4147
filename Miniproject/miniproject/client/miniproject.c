@@ -39,7 +39,6 @@ int udp_send(struct udp_conn *udp, char *buf, int len)
 int udp_receive(struct udp_conn *udp, char *buf, int len)
 {
 	int res = recvfrom(udp->sock, buf, len, 0, (struct sockaddr *)&(udp->client), &(udp->client_len));
-
 	return res;
 }
 

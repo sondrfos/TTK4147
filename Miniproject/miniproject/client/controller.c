@@ -4,7 +4,7 @@
 
 
 double PID_controller(double y){
-	uint16_t 	K_p 		= 10;
+	uint16_t 	K_p 		= 5;
 	uint16_t 	K_i 		= 800;
 	uint16_t	K_d 		= 0.025;
 	static double integral 	= 0;
