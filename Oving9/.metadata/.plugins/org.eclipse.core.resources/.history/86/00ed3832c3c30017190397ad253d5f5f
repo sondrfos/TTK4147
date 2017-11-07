@@ -1,0 +1,71 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+
+struct pid_data{
+	pthread_mutex_t pid_mutex;
+	pid_t pid;
+};
+
+int get_pid() {
+	int dis = shm_open("/sharedpid", O_RDWR, S_IRWXU);
+
+	struct pid_data* ptr = mmap(0, sizeof(struct pid_data), PROT_READ | PROT_WRITE, MAP_SHARED, dis, 0);
+
+	pthread_mutex_lock(&(ptr->pid_mutex));
+	int pid = ptr->pid;
+	pthread_mutex_unlock(&(ptr->pid_mutex));
+
+	return pid;
+}
+
+void* send_msg(void* param, void* param2){
+	int* server_pid = param;
+	char* msg[16] = param2;
+
+	char buf_response[16];
+	int chan_id = ConnectAttach(0, server_pid, 1, 0, 0);
+
+	MsgSend(chan_id, msg, 16, buf_response, 16);
+	printf(buf_response);
+	ConnectDetach(chan_id);
+	return NULL;
+}
+
+
+
+
+int main() {
+	int server_pid = get_pid();
+	printf("%d \n", server_pid);
+
+	pthread_t threads[4];
+	int integers [4] = {1, 2, 3, 4};
+
+	for (int i = 0; i < 4; i++){
+		pthread_create(&threads[i], NULL, send_msg, (server_id, &integers[i]);
+	}
+	for(i= 0; i<4; i++){
+	    pthread_join(threads[i], NULL);
+	}
+
+	return 1;
+}
+
+
+
+
+
+
+
+
+
+

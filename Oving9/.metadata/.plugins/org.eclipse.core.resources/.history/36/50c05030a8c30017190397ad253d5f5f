@@ -1,0 +1,17 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+#include "shared_mem.h"
+
+int main(int argc, char *argv[]) {
+	printf("Welcome to the QNX Momentics IDE\n");
+
+	ex_31();
+	return EXIT_SUCCESS;
+}

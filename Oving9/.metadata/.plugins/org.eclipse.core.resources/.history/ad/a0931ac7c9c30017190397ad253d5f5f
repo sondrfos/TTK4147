@@ -1,0 +1,97 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+
+struct pid_data{
+	pthread_mutex_t pid_mutex;
+	pid_t pid;
+};
+
+struct arg_struct{
+	int server_pid;
+	int priority;
+};
+
+int set_priority(int priority){
+	int policy;
+	struct sched_param param;
+
+	// check priority in range
+	if (priority < 1 || priority > 63) return -1;
+
+	// set priority
+	pthread_getschedparam(pthread_self(), &policy, &param);
+	param.sched_priority = priority;
+	return pthread_setschedparam(pthread_self(), policy, &param);
+}
+
+int get_priority(){
+	int policy;
+	struct sched_param param;
+
+	// get priority
+	pthread_getschedparam(pthread_self(), &policy, &param);
+	return param.sched_curpriority;
+}
+
+
+int get_pid() {
+	int dis = shm_open("/sharedpid", O_RDWR, S_IRWXU);
+
+	struct pid_data* ptr = mmap(0, sizeof(struct pid_data), PROT_READ | PROT_WRITE, MAP_SHARED, dis, 0);
+
+	pthread_mutex_lock(&(ptr->pid_mutex));
+	int pid = ptr->pid;
+	pthread_mutex_unlock(&(ptr->pid_mutex));
+
+	return pid;
+}
+
+void* send_msg(void* param){
+	struct arg_struct arguments  = *(struct arg_struct*)param;
+	set_priority(arguments.priority);
+	char buf_response[16];
+	int chan_id = ConnectAttach(0, arguments.server_pid, 1, 0, 0);
+
+	MsgSend(chan_id, arguments.priority, 16, buf_response, 16);
+	printf(buf_response);
+	ConnectDetach(chan_id);
+	return NULL;
+}
+
+
+
+
+int main() {
+	int server_pid = get_pid();
+	printf("%d \n", server_pid);
+
+	pthread_t threads[4];
+	struct arg_struct arguments[4] = {{server_pid, 1}, {server_pid, 1}, {server_pid, 10}, {server_pid, 10}};
+	int i;
+	for (i = 0; i < 4; i++){
+		pthread_create(&threads[i], NULL, send_msg, &arguments[i]);
+	}
+	for(i= 0; i<4; i++){
+	    pthread_join(threads[i], NULL);
+	}
+	return 1;
+}
+
+
+
+
+
+
+
+
+
+

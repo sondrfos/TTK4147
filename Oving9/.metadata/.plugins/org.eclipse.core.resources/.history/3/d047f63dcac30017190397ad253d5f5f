@@ -1,0 +1,28 @@
+/*
+ * priority.c
+ *
+ *  Created on: 7. nov. 2017
+ *      Author: jeandres
+ */
+
+int set_priority(int priority){
+	int policy;
+	struct sched_param param;
+
+	// check priority in range
+	if (priority < 1 || priority > 63) return -1;
+
+	// set priority
+	pthread_getschedparam(pthread_self(), &policy, &param);
+	param.sched_priority = priority;
+	return pthread_setschedparam(pthread_self(), policy, &param);
+}
+
+int get_priority(){
+	int policy;
+	struct sched_param param;
+
+	// get priority
+	pthread_getschedparam(pthread_self(), &policy, &param);
+	return param.sched_curpriority;
+}

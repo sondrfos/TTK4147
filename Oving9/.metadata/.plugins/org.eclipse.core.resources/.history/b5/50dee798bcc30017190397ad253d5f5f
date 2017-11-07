@@ -1,0 +1,35 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+#include "share_mem.h"
+
+int main() {
+	store_pid();
+
+	void* msg_buf; //Message buffer
+	int bytes = 128; //# of bytes in msg
+
+	int chan_id = ChannelCreate(0);
+
+	int rec_msg_id = MsgReceive(chan_id, msg_buf, bytes, NULL);
+	char* msg = msg_buf;
+
+	printf("%s", msg);
+
+	//Do job for client here
+
+	int reply_size = 16;
+	char reply[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+	MsgReply(rec_msg_id, EOK,reply, reply_size);
+
+	return 4;
+}

@@ -1,0 +1,8 @@
+void ex_31(){
+	int dis = shm_open("/sharedpid", O_RDWR | O_CREAT, S_IRWXU);
+	ftruncate(dis, sizeof(int));
+
+	void* mem_loc = mmap(0, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, dis, 0);
+
+
+}

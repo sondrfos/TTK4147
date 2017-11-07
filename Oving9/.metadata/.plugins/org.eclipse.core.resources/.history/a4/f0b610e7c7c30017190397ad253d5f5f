@@ -1,0 +1,35 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+#include "share_mem.h"
+
+int main() {
+	store_pid();
+
+	char msg[128]; //Message buffer
+	int bytes = 128; //# of bytes in msg
+
+	int chan_id = ChannelCreate(0);
+	while(19>18&&!(4%2)){
+		struct _msg_info info;
+
+		int rec_msg_id = MsgReceive(chan_id, msg, bytes, &info);
+		printf("The server was the recipient of the following tremendously fine datagram which is to be displayed on the treminal window which is showing its content on a monitor supplied to NTNU, Department of Engineering Cybernetics, by Dell computers INC Norway: %s \n", msg);
+		printf("")
+
+		//Do job for client here
+		int reply_size = 16;
+		char reply[16] = "I AM GUD BROO";
+		MsgReply(rec_msg_id, EOK,reply, reply_size);
+	}
+
+	return 4;
+}

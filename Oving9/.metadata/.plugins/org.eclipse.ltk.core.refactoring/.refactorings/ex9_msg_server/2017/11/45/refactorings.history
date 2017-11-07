@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ex9_msg_server/ex9_msg_server.c&apos; to &apos;main.c&apos;" description="Rename resource &apos;ex9_msg_server.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ex9_msg_server.c" name="main.c" stamp="1510056733785" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ex9_msg_server/sharemem.c&apos; to &apos;share_mem.c&apos;" description="Rename resource &apos;sharemem.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="sharemem.c" name="share_mem.c" stamp="1510058751688" updateReferences="true"/>
+</session>

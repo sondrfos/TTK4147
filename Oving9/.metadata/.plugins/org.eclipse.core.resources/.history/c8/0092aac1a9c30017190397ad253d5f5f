@@ -1,0 +1,35 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+ptread_mutex_t pid_mutex = PTHREAD_MUTEX_INITIALIZER;
+
+struct pid_data{
+	pthread_mutex_t pid_mutx;
+	pid_t pid;
+};
+
+
+
+void create_file(){
+	int dis = shm_open("/sharedpid", O_RDWR | O_CREAT, S_IRWXU);
+	ftruncate(dis, sizeof(struct pid_data));
+
+	void* mem_loc = mmap(0, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, dis, 0);
+}
+
+int main(int argc, char *argv[]) {
+	printf("You're a wizzard Harry\n");
+	struct pid_data data = {pid_mutex, getpid()};
+
+
+
+	return EXIT_SUCCESS;
+}
