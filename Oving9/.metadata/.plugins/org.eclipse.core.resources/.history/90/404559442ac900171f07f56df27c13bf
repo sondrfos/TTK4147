@@ -1,0 +1,23 @@
+/*
+ * main.c
+ *
+ *  Created on: 14. nov. 2017
+ *      Author: jeandres the great
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+#include <sys/neutrino.h>
+
+
+int main(void){
+	
+}

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="658"/>
+		<item key="DIALOG_Y_ORIGIN" value="401"/>
+	</section>
 	<section name="ResourceNavigator">
 		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1510048926292"/>
 		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="C:\Users\jeandres\Desktop\TTK4147\Oving10\ex10read"/>
 	</section>
 </section>
