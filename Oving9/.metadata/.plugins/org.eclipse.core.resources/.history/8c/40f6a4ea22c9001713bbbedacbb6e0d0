@@ -1,0 +1,41 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/dispatch.h>
+#include <sys/mman.h>
+
+#include "share_mem.h"
+#include "priority.h"
+
+int main() {
+	store_pid();
+
+	char msg[128]; //Message buffer
+	int bytes = 128; //# of bytes in msg
+	set_priority(5);
+
+
+	int chan_id = ChannelCreate('NTO_CHF_FIXED_PRIORITY');
+	int i;
+	for(i = 0; i < 4;i++){
+		struct _msg_info info;
+
+		int rec_msg_id = MsgReceive(chan_id, msg, bytes, &info);
+		printf("The server was the recipient of the following tremendously fine datagram: %s \n", msg);
+		printf("Process id: %d\n",info.pid);
+		printf("Thread id: %d\n", info.tid);
+		printf("%d \n", get_priority());
+
+		//Do job for client here
+		int reply_size = 16;
+		char reply[16] = "I AM GUD BRO\n";
+		MsgReply(rec_msg_id, EOK,reply, reply_size);
+	}
+
+	return 0x1;
+}

@@ -8,6 +8,7 @@
 #include <time.h>
 #include <sys/dispatch.h>
 #include <sys/mman.h>
+#include <sys/neutrino.h>
 
 #include "share_mem.h"
 #include "priority.h"
@@ -37,5 +38,5 @@ int main() {
 		MsgReply(rec_msg_id, EOK,reply, reply_size);
 	}
 
-	return 4;
+	return 0x1;
 }

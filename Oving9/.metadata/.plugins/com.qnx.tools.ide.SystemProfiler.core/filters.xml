@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filterSettings>
+<filter name="192.168.056.101-trace-171114-112108.kev">
+<filterData type="Elements"/>
+<filterData type="Events"/>
+<filterData type="Partitions"/>
+</filter>
+<filter name="Default Filter">
+<filterData type="Elements"/>
+<filterData type="Events"/>
+<filterData type="Partitions"/>
+</filter>
+</filterSettings>

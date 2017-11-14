@@ -68,9 +68,6 @@ void* send_msg(void* param){
 	return NULL;
 }
 
-
-
-
 int main() {
 	set_priority(60);
 	int server_pid = get_pid();
