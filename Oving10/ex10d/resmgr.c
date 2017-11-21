@@ -24,6 +24,7 @@ int io_write(resmgr_context_t *ctp, io_write_t *msg, RESMGR_OCB_T *ocb);
 void* counter_manipulator();
 
 fifo_t queue;
+int nonblock;
 
 pthread_mutex_t queue_mut	= PTHREAD_MUTEX_INITIALIZER;
 
@@ -54,7 +55,6 @@ int main(int argc, char *argv[]) {
 	// override functions
 	io_funcs.read = io_read;
 	io_funcs.write = io_write;
-	//io_funcs.write = io_write;
 
 	// establish resource manager
 	if (resmgr_attach(dpp, &resmgr_attr, "/dev/myresource", _FTYPE_ANY, 0, &connect_funcs, &io_funcs, &io_attr) < 0)
@@ -78,52 +78,54 @@ int main(int argc, char *argv[]) {
 
 int io_read(resmgr_context_t *ctp, io_read_t *msg, iofunc_ocb_t *ocb){
 	char buf[WIDTH] = "";
+	iofunc_read_verify(ctp, msg, ocb, &nonblock);
+
 	if(!ocb->offset){
-		// set data to return
-		pthread_mutex_lock(&queue_mut);
-		fifo_rem_string(&queue, &buf);
-		pthread_mutex_unlock(&queue_mut);
-		if(buf != ""){
+		if(fifo_status(&queue)){
+			pthread_mutex_lock(&queue.resource_mutex);
+			fifo_rem_string(&queue, buf);
+			pthread_mutex_unlock(&queue.resource_mutex);
+
 			SETIOV(ctp->iov, buf, strlen(buf));
 			_IO_SET_READ_NBYTES(ctp, strlen(buf));
-
 			// increase the offset (new reads will not get the same data)
 			ocb->offset = 1;
 
-			// return
 			return (_RESMGR_NPARTS(1));
 		}
-	} else {
-		// set to return no data
-		_IO_SET_READ_NBYTES(ctp, 0);
-
-		// return
-		return (_RESMGR_NPARTS(0));
+		else if(!nonblock){
+			fifo_add_blocked_id(&queue, ctp->rcvid);
+			return (_RESMGR_NOREPLY);
+		}
 	}
+
+	// set to return no data
+	_IO_SET_READ_NBYTES(ctp, 0);
+	return (_RESMGR_NPARTS(0));
 }
 
 int io_write(resmgr_context_t *ctp, io_write_t *msg, RESMGR_OCB_T *ocb){
+
 	char    buf[WIDTH];
-	msg->i.nbytes = WIDTH;
 
-	/* set up the number of bytes (returned by client's write()) */
 	_IO_SET_WRITE_NBYTES (ctp, msg->i.nbytes);
-
-	/*
-	 *  Reread the data from the sender's message buffer.
-	 *  We're not assuming that all of the data fit into the
-	 *  resource manager library's receive buffer.
-	 */
 	resmgr_msgread(ctp, buf, msg->i.nbytes, sizeof(msg->i));
 	buf [msg->i.nbytes] = '\0'; /* just in case the text is not NULL terminated */
 	SETIOV(ctp->iov, buf, strlen(buf));
-	_IO_SET_READ_NBYTES(ctp, strlen(buf));
 
 
-	pthread_mutex_lock(&queue_mut);
-	fifo_add_string(&queue, buf);
-	pthread_mutex_unlock(&queue_mut);
+	pthread_mutex_lock(&queue.resource_mutex);
+	int next_id = fifo_rem_blocked_id(&queue);
+	pthread_mutex_unlock(&queue.resource_mutex);
 
+	if (next_id !=-1){
+		printf("HER ER JEG!\n");
+		MsgReply(next_id,msg->i.nbytes,buf,msg->i.nbytes);
+	} else{
+		pthread_mutex_lock(&queue.resource_mutex);
+		fifo_add_string(&queue, buf);
+		pthread_mutex_unlock(&queue.resource_mutex);
+	}
 	return (_RESMGR_NPARTS (0));
 }
 

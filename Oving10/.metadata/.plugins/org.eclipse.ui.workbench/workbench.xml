@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
-<window height="1160" width="1674" x="0" y="0">
+<window height="1160" width="1088" x="832" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="365"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="130" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="204" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.qnx.tools.ide.phab.ui.PhabActionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="167" y="22"/>
@@ -32,21 +32,26 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="resmgr.c" partName="resmgr.c" path="C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10d/resmgr.c" title="resmgr.c" tooltip="ex10d/resmgr.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="resmgr.c" partName="resmgr.c" path="C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10d/resmgr.c" title="resmgr.c" tooltip="ex10d/resmgr.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ex10d/resmgr.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3151" selectionTopPixel="1602"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2800" selectionTopPixel="1619"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="fifo.h" partName="fifo.h" path="C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10d/fifo.h" title="fifo.h" tooltip="ex10d/fifo.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ex10d/fifo.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="243" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="745" selectionTopPixel="204"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="fifo.c" partName="fifo.c" path="C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10d/fifo.c" title="fifo.c" tooltip="ex10d/fifo.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ex10d/fifo.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="142" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="429" selectionTopPixel="1326"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="ex10dex.c" partName="ex10dex.c" path="C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10dex/ex10dex.c" title="ex10dex.c" tooltip="ex10dex/ex10dex.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ex10dex/ex10dex.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="349" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -446,7 +451,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="topLeft"/>
+<info part="org.eclipse.ui.editorss" ratio="0.1470311" ratioLeft="156" ratioRight="905" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.6368821" ratioLeft="670" ratioRight="382" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -477,159 +482,158 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ex10d/resmgr.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ex10d/fifo.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ex10dex/ex10dex.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ex10d/fifo.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ex10d/fifo.c"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" uri="file:/C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10d/read_file_example.c"/>
 </editors>
+<item historyLabel="fifo.h" index="1">
+<position info="not_deleted" x="355" y="0"/>
+</item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="627" y="0"/>
+<position info="not_deleted" x="1960" y="0"/>
 </item>
 <item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="440" y="0"/>
+<position info="not_deleted" x="355" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="627" y="0"/>
+<position info="not_deleted" x="1960" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3221" y="0"/>
+<position info="not_deleted" x="1959" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="515" y="0"/>
 </item>
 <item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="440" y="0"/>
+<position info="not_deleted" x="355" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3221" y="0"/>
+<position info="not_deleted" x="2288" y="0"/>
 </item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="440" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3221" y="0"/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="440" y="0"/>
-</item>
-<item historyLabel="fifo.c" index="2">
-<position info="not_deleted" x="550" y="0"/>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="150" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3221" y="0"/>
+<position info="not_deleted" x="1941" y="10"/>
 </item>
 <item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="440" y="0"/>
+<position info="not_deleted" x="355" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1599" y="88"/>
+<position info="not_deleted" x="1941" y="10"/>
 </item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="440" y="0"/>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="224" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
+<position info="not_deleted" x="2214" y="0"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="237" y="4"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="1779" y="7"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="167" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2041" y="0"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="41" y="18"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="271" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2090" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2029" y="0"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="271" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="616" y="0"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="224" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="616" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2391" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2387" y="0"/>
 </item>
 <item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="610" y="0"/>
+<position info="not_deleted" x="355" y="0"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2387" y="0"/>
+</item>
+<item historyLabel="fifo.h" index="1">
+<position info="not_deleted" x="618" y="78"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2387" y="0"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="224" y="0"/>
+</item>
+<item historyLabel="fifo.h" index="1">
+<position info="not_deleted" x="654" y="42"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2935" y="0"/>
 </item>
 <item historyLabel="fifo.c" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="600" y="16"/>
+<position info="not_deleted" x="745" y="19"/>
+</item>
+<item historyLabel="resmgr.c" index="0">
+<position info="not_deleted" x="2935" y="0"/>
 </item>
 <item historyLabel="fifo.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="316" y="0"/>
-</item>
-<item historyLabel="fifo.c" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="429" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="630" y="15"/>
+<position info="not_deleted" x="2935" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
+<position info="not_deleted" x="3044" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1962" y="0"/>
+<position info="not_deleted" x="3039" y="0"/>
+</item>
+<item historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="224" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1962" y="0"/>
+<position info="not_deleted" x="3039" y="0"/>
 </item>
 <item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
+<position info="not_deleted" x="2800" y="0"/>
 </item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="630" y="15"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="630" y="15"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="630" y="15"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2132" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="2357" y="0"/>
-</item>
-<item historyLabel="read_file_example.c" index="4">
-<position info="not_deleted" x="59" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3154" y="29"/>
-</item>
-<item historyLabel="read_file_example.c" index="4">
-<position info="not_deleted" x="59" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3154" y="29"/>
-</item>
-<item historyLabel="read_file_example.c" index="4">
-<position/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="3154" y="29"/>
-</item>
-<item historyLabel="read_file_example.c" index="4">
-<position/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1596" y="0"/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="243" y="0"/>
-</item>
-<item historyLabel="fifo.c" index="3">
-<position info="not_deleted" x="142" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1596" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1594" y="0"/>
-</item>
-<item historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1651" y="0"/>
-</item>
-<item historyLabel="fifo.h" index="1">
-<position info="not_deleted" x="243" y="0"/>
-</item>
-<item active="true" historyLabel="resmgr.c" index="0">
-<position info="not_deleted" x="1651" y="0"/>
+<item active="true" historyLabel="ex10dex.c" index="2">
+<position info="not_deleted" x="224" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -648,6 +652,18 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ex10dex.c" tooltip="ex10dex/ex10dex.c">
+<persistable path="/ex10dex/ex10dex.c"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="read_file_example.c" tooltip="C:\Users\jeandres\Desktop\TTK4147\Oving10\ex10dex\read_file_example.c">
+<persistable uri="file:/C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10dex/read_file_example.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="read_file_example.c" tooltip="ex10d/read_file_example.c">
+<persistable path="/ex10d/read_file_example.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="resmgr.c" tooltip="ex10/resmgr.c">
+<persistable path="/ex10/resmgr.c"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="read_file_example.c" tooltip="C:\Users\jeandres\Desktop\TTK4147\Oving10\ex10d\read_file_example.c">
 <persistable uri="file:/C:/Users/jeandres/Desktop/TTK4147/Oving10/ex10d/read_file_example.c"/>
 </file>
@@ -656,9 +672,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fifo.h" tooltip="ex10d/fifo.h">
 <persistable path="/ex10d/fifo.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="resmgr.c" tooltip="ex10/resmgr.c">
-<persistable path="/ex10/resmgr.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="resmgr.c" tooltip="ex10d/resmgr.c">
 <persistable path="/ex10d/resmgr.c"/>
