@@ -1,8 +1,0 @@
-#include "io.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <native/task.h>
-#include <native/timer.h>
-#include <unistd.h>
-#include <sys/mman.h>
-#include <pthread.h>

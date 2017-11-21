@@ -1,4 +1,0 @@
-config BR2_PACKAGE_XAPP_TWM
-	bool "twm"
-	help
-	  No description available

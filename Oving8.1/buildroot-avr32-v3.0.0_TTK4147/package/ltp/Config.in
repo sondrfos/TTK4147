@@ -1,6 +1,0 @@
-config BR2_PACKAGE_LTP
-	bool "Linux Test Project"
-	help
-	  The Linux Test Project provides a huge testsuite for Linux.
-
-	  http://ltp.sourceforge.net/

@@ -1,2 +1,0 @@
-# Make dnsmasq read additional host names.
-addn-hosts=/etc/hosts.dnsmasq
